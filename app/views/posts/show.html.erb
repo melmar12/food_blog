@@ -9,14 +9,8 @@
 
 		<%= image_tag @post.image.url(:large), class: 'post-header-image' %>
 
-		<p>
-		  <strong>Description:</strong>
-		  <%= @post.description %>
-		</p>
-
-		<% @post.photos.each do |photo| %>
-		<%= image_tag photo.image.url(:medium) %>
-		<% end %>
+		<%= raw @post.description %>	
+		
 	</div>
 </div>
 

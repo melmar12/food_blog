@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :photos
+  mount Ckeditor::Engine => '/ckeditor'
   resources :posts
   get 'home/index'
 
