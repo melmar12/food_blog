@@ -16,6 +16,7 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
+        <%= image_tag post.image.url(:medium) %>
         <td><%= post.title %></td>
         <td><%= post.description %></td>
         <td><%= post.draft %></td>
