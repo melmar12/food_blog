@@ -170,7 +170,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aws-sdk (< 2.0)
+  aws-sdk
   byebug
   ckeditor (= 4.1.3)
   coffee-rails (~> 4.1.0)
