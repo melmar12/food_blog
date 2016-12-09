@@ -50,7 +50,7 @@ group :development do
 end
 
 group :production do 
-  gem 'aws-sdk', '~> 2.0'
+  gem 'aws-sdk', '< 2.0'
   gem 'rails_12factor'
   gem 'pg'
 end
