@@ -1,0 +1,8 @@
+<% @posts.each do |post| %>
+
+<div class="post-tile-card">
+<a href='<%= post_path(post) %>'><%= image_tag post.image.url(:medium) %></a></br>
+<a href='<%= post_path(post) %>' class="header"><%= post.title.titleize %></a>
+</div>
+
+<% end %>

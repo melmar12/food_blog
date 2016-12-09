@@ -1,26 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @post.image.url(:medium) %>
+<div class="post-show-container">
+	<div class="post-show">
+		<h1><%= @post.title.titleize %></h1>
+		<%= link_to 'Edit', edit_post_path(@post) %> |
+		<%= link_to 'Back', posts_path %> |
+		<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></br>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+		<%= image_tag @post.image.url(:large), class: 'post-header-image' %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
+		<p>
+		  <strong>Description:</strong>
+		  <%= @post.description %>
+		</p>
+	</div>
+</div>
 
-<p>
-  <strong>Draft:</strong>
-  <%= @post.draft %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
