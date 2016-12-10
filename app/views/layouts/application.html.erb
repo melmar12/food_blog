@@ -14,12 +14,13 @@
 
 </head>
 <body>
+	<div class="page-container">
+		<%= render 'layouts/navbar' %>
 
-<%= render 'layouts/navbar' %>
+		<%= yield %>
 
-<%= yield %>
-
-<%= render 'layouts/footer' %>
+	</div>
+	<%= render 'layouts/footer' %>
 
 </body>
 </html>
