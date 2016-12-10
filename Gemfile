@@ -30,6 +30,8 @@ gem 'ckeditor', '4.1.3'
 
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
+gem 'bcrypt'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

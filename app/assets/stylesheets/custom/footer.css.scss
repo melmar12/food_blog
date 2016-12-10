@@ -7,4 +7,11 @@ footer {
 
 	position: fixed;
 	bottom: 0;
+
+	a {
+		color: rgba(black, .5);
+	}
+	a:hover {
+		color: rgba(black, .2);
+	}
 }

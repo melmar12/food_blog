@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin, except: [:index, :show]
+  before_action :require_user, except: [:index, :show]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
@@ -25,6 +28,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
 
     respond_to do |format|
       if @post.save
@@ -70,5 +74,12 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :description, :draft, :user_id, :image)
+    end
+
+    def require_same_user
+      if current_user != @event.user && !current_user.admin?
+        flash[:danger] = "You can only edit or delete your own articles"
+        redirect_to root_path
+      end
     end
 end
