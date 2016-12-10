@@ -5,7 +5,9 @@
 		<h1><%= @post.title.titleize %></h1>
 
 		<%= image_tag @post.image.url(:large), class: 'post-header-image' %>
-
+		<a href="https://www.pinterest.com/pin/create/button/">
+		    <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" />
+		</a>
 
 		<%= raw @post.description %>
 
