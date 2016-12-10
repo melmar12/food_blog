@@ -3,13 +3,12 @@
 <div class="post-show-container">
 	<div class="post-show">
 		<h1><%= @post.title.titleize %></h1>
-		<%= link_to 'Edit', edit_post_path(@post) %> |
-		<%= link_to 'Back', posts_path %> |
-		<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></br>
 
 		<%= image_tag @post.image.url(:large), class: 'post-header-image' %>
 
-		<%= raw @post.description %>	
+
+		<%= raw @post.description %>
+
 		
 	</div>
 </div>
